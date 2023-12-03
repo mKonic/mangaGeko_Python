@@ -8,8 +8,6 @@ from os.path import isfile, join
 
 url_search = "https://www.mangageko.com/manga/"
 url_read = "https://www.mangageko.com/reader/en/"
-url_sample_search = "https://www.mangageko.com/manga/i-can-snatch-999-types-of-abilities/"
-url_sample_read = "https://www.mangageko.com/reader/en/becoming-a-legendary-ace-employee-chapter-0-eng-li/"
 
 def get_manga_info(url,name):
     try:
@@ -87,7 +85,10 @@ def download_file(url,chapter):
         print(e)
 
 manga_name = input("Enter manga name: ").lower()
-get_manga_info(url_sample_search,manga_name)
+search_url = url_search+"-".join(manga_name.split(" "))+"/"
+
+print(search_url)
+get_manga_info(search_url,manga_name)
 
 
 # i can snatch 999 types of abilities
